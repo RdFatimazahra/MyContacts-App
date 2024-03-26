@@ -1,0 +1,11 @@
+
+.navbar{
+    width: 5%;
+    height: 100%;
+    position: fixed;
+    background-color: rgb(216, 226, 245);
+}
+.img{
+    width: 5%;
+    height: 5%;
+}

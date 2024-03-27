@@ -3,9 +3,32 @@
     width: 5%;
     height: 100%;
     position: fixed;
-    background-color: rgb(216, 226, 245);
+    background-color: rgba(245, 225, 203, 0.79);
 }
 .img{
-    width: 5%;
-    height: 5%;
+    width: 80%;
+    height: 80%;
+}
+#test{
+    background-image: url(/Media/test.jpeg);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .card{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+   
+
+.group{
+    padding-right: 30px;
+
 }

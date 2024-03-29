@@ -1,11 +1,10 @@
 async function get() {
-    const response = await fetch("/user.json");
+    const response = await fetch("https://randomuser.me/api/");
     const data = await response.json();
   
     const cardsContainer = document.querySelector('.liste');
   
     // Clear the existing content inside cardsContainer
-    cardsContainer.innerHTML = '';
   
     // Iterate over each user in the data and create a list item for them
     data.results.forEach(user => {
@@ -22,5 +21,10 @@ async function get() {
     });
   }
   
-  get();
-  
+  function loop() {
+    for(i=0 ; i<20 ; i++) {
+        get();
+    }
+  } 
+
+  loop()

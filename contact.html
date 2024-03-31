@@ -1,27 +1,63 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="contact.css">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>My Contact App</title>
 </head>
 <body>
 
-  <div class="principale">
-
+   
+    <!-- Team -->
+    <div class="principale">
     
-  <div  class="liste overflow-y-auto h-85 ">
+    <div class="contact">
+    <section id="team" class="pb-5">
+        <div class="container">
+            
+            <div class="test">
+            <h5 class="section-title h1">CONTACT LIST</h5>
+            <div class="mx-auto">
+                <!-- Search Bar -->
+                <input  type="text" class="form-control mx-auto" style="width: 300px;" placeholder="Search...">
+            </div>
+            </div>
+            <div class="row">
+            
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img id="image" class=" img-fluid" src="/test.avif" alt="card image"></p>
+                                        <h4 id="name" class="card-title">test test</h4>
+                                        <p id="statut" class="card-text">This is test</p>
+                                        <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+              
+    
+            </div>
+        </div>
+    </section>
+</div>
+    <!-- Team -->
 
 
 </div>
-<div class="details">
-    <h2>Details</h2>
-  </div>
 
-  </div>
-  
-</div>
-<script src="contact.js"></script>
+
+
+
+   <script src="contact.js"></script>
 </body>
 </html>

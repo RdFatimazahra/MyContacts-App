@@ -9,6 +9,15 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>My Contact App</title>
+    <style>
+      .add-contact-btn {
+        position: absolute;
+        top: 14%;
+        right: 70px; /* Ajustez la valeur selon votre mise en page */
+        transform: translateY(-50%);
+      }
+    </style>
+
 </head>
 <body>
 
@@ -22,11 +31,20 @@
             
             <div class="test">
             <h5 class="section-title h1">CONTACT LIST</h5>
+            <div class="add-contact-btn">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addContactModal">
+                Ajouter Contact
+              </button>
+            </div>
+
             <div class="mx-auto">
                 <!-- Search Bar -->
-                <input  type="text" class="form-control mx-auto" style="width: 300px;" placeholder="Search...">
+                <input id="search" type="text" class="form-control mx-auto" style="width: 300px;" placeholder="Search...">
             </div>
+            
             </div>
+          
+
             <div class="row">
             
                 <!-- Team member -->

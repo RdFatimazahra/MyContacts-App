@@ -144,4 +144,9 @@ flex-direction: column;
 
 .test{
     display:flex ;
+    flex-direction: column;
+}
+#search{
+    margin-top: 3px;
+    margin-bottom: 20px;
 }

@@ -13,7 +13,7 @@
   <body>
     <section class="container">
       <header>AJOUTER CONTACT</header>
-      <form action="#" class="form">
+      <form id="addContactForm" action="#" class="form">
         <div class="input-box">
             <div class="upload">
                 <img src="/Media/profil.jpg" id="profile-pic" width = 100 height = 100 alt="">
@@ -25,38 +25,64 @@
         <div class="column">
             <div class="input-box">
             <label>Nom</label>
-            <input type="text" placeholder="Entrer votre nom" required />
+            <input id="nom" type="text" placeholder="Entrer votre nom" required />
             </div>
             <div class="input-box">
             <label>Prenom</label>
-            <input type="text" placeholder="Entrer votre prenom" required />
+            <input id="prenom" type="text" placeholder="Entrer votre prenom" required />
             </div>
         </div>
 
         <div class="input-box">
             <label>numero de Tel</label>
-            <input type="tel" placeholder="Entrer votre num de Tel" required />
+            <input id="tel" type="tel" placeholder="Entrer votre num de Tel" required />
           </div>
         <div class="input-box">
           <label>Addresse Email</label>
-          <input type="text" placeholder="Entrer votre addresse email " required />
+          <input id="adresse" type="text" placeholder="Entrer votre addresse email " required />
         </div>
 
         <div class="column">
         <div class="input-box Job">
           <label>TRAVAIL</label>
-          <input type="text" placeholder="Entrer votre travail" required />
+          <input id="travail" type="text" placeholder="Entrer votre travail" required />
         </div>
         <div class="input-box Job">
           <label>Entreprise</label>
-          <input type="text" placeholder="Entrer votre Entreprise" required />
+          <input id="entreprise" type="text" placeholder="Entrer votre Entreprise" required />
         </div>
     </div>
         <button>AJOUTER</button>
       </form>
     </section>
     <!-- js file -->
-    <script src="JavaScript/ContactAjoute.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const addContactForm = document.getElementById('addContactForm');
+    
+          addContactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const nom = document.getElementById('nom').value.trim();
+            const prenom = document.getElementById('prenom').value.trim();
+            const tel = document.getElementById('tel').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const travail = document.getElementById('travail').value.trim();
+            const entreprise = document.getElementById('entreprise').value.trim();
+    
+            if (nom === '' || prenom === '' || tel === '' || email === '' || travail === '' || entreprise === '') {
+              alert('Veuillez remplir tous les champs du formulaire.');
+              return;
+            }
+    
+            // Vous pouvez ajouter ici la logique pour envoyer les données du formulaire
+            alert('Formulaire soumis avec succès !');
+            // addContactForm.submit(); // Soumettre le formulaire si nécessaire
+          });
+        });
+      </script>
+
+    <script src="/AddContact.js"></script>
     <!-- js -->
     <script>
       let profilePic = document.getElementById("profile-pic");

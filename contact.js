@@ -27,3 +27,11 @@ async function getContacts() {
 document.addEventListener('DOMContentLoaded', () => {
   getContacts();
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const addContactBtn = document.getElementById('addContactBtn');
+  addContactBtn.addEventListener('click', function() {
+    window.location.href = 'addcontact.html';
+  });
+});

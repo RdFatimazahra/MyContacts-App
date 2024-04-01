@@ -13,7 +13,7 @@
   <body>
     <section class="container">
       <header>AJOUTER CONTACT</header>
-      <form id="addContactForm" action="#" class="form">
+      <form id="addContactForm" action="#" class="form" onsubmit="return validateForm()">
         <div class="input-box">
             <div class="upload">
                 <img src="/Media/profil.jpg" id="profile-pic" width = 100 height = 100 alt="">
@@ -56,35 +56,23 @@
       </form>
     </section>
     <!-- js file -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const addContactForm = document.getElementById('addContactForm');
-    
-          addContactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-    
-            const nom = document.getElementById('nom').value.trim();
-            const prenom = document.getElementById('prenom').value.trim();
-            const tel = document.getElementById('tel').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const travail = document.getElementById('travail').value.trim();
-            const entreprise = document.getElementById('entreprise').value.trim();
-    
-            if (nom === '' || prenom === '' || tel === '' || email === '' || travail === '' || entreprise === '') {
-              alert('Veuillez remplir tous les champs du formulaire.');
-              return;
-            }
-    
-            // Vous pouvez ajouter ici la logique pour envoyer les données du formulaire
-            alert('Formulaire soumis avec succès !');
-            // addContactForm.submit(); // Soumettre le formulaire si nécessaire
-          });
-        });
-      </script>
 
     <script src="/AddContact.js"></script>
     <!-- js -->
     <script>
+
+        
+
+
+
+
+
+
+
+
+
+
+
       let profilePic = document.getElementById("profile-pic");
       let inputFile = document.getElementById("input-file");
       inputFile.onchange = function(){

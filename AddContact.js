@@ -1,24 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const addContactForm = document.getElementById('addContactForm');
+const form = document.getElementById("form");
+const inputs = form.querySelectorAll("input");
 
-  addContactForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+form.addEventListener("submit", submitHandler);
 
-    const nom = document.getElementById('nom').value.trim();
-    const prenom = document.getElementById('prenom').value.trim();
-    const tel = document.getElementById('tel').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const travail = document.getElementById('travail').value.trim();
-    const entreprise = document.getElementById('entreprise').value.trim();
-
-    if (nom === '' || prenom === '' || tel === '' || email === '' || travail === '' || entreprise === '') {
-      alert('Veuillez remplir tous les champs du formulaire.');
-      return;
-    }
-
-    // Vous pouvez ajouter ici la logique pour envoyer les données du formulaire
-    alert('Formulaire soumis avec succès !');
-    // addContactForm.submit(); // Soumettre le formulaire si nécessaire
-  });
-});
-
+function submitHandler(e) {
+    e.preventDefault();
+    inputs.forEach((input) => {
+        const errorMessage = input.nextElementSibling;
+        if (input.value.trim() === "") {
+            errorMessage.textContent = `${input.dataset.type} is required`;
+        } else if (input.dataset.type === "Email" && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.value.trim())) {
+            errorMessage.textContent = "Invalid email format";
+        } else if (input.dataset.type === "phone" && !/^06\d{8}$/.test(input.value.trim())) {
+            errorMessage.textContent = "Phone number must start with 06 and have 10 digits in total";
+        } else {
+            errorMessage.textContent = "";
+        }
+    });
+}

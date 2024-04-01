@@ -45,7 +45,7 @@
             </div>
           
 
-            <div class="row">
+            <div class="row" id="contactsContainer">
             
                 <!-- Team member -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
@@ -74,8 +74,36 @@
 </div>
 
 
-
-
    <script src="contact.js"></script>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('search');
+      const contactsContainer = document.getElementById('contactsContainer');
+  
+      // Fonction de recherche
+      function searchContacts(searchTerm) {
+        const contacts = Array.from(contactsContainer.getElementsByClassName('col-md-4'));
+  
+        contacts.forEach(contact => {
+          const name = contact.querySelector('.card-title').innerText.toLowerCase();
+          const phone = contact.querySelector('.card-text').innerText.toLowerCase();
+          
+          if (name.includes(searchTerm) || phone.includes(searchTerm)) {
+            contact.style.display = 'block';
+          } else {
+            contact.style.display = 'none';
+          }
+        });
+      }
+  
+      // Écouter les changements dans l'input de recherche
+      searchInput.addEventListener('input', function(event) {
+        const searchTerm = event.target.value.trim().toLowerCase();
+        searchContacts(searchTerm);
+      });
+    });
+  </script>
+  
 </body>
 </html>

@@ -54,9 +54,62 @@
     </div>
         <button>AJOUTER</button>
       </form>
+
+     
     </section>
     <!-- js file -->
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const addContactForm = document.getElementById('addContactForm');
+          const contactsContainer = document.getElementById('contactsContainer');
+      
+          // Fonction pour ajouter un contact au début de la liste affichée
+          function addContactToList(contact) {
+            const contactCard = document.createElement('div');
+            contactCard.classList.add('col-xs-12', 'col-sm-6', 'col-md-4');
+            contactCard.innerHTML = `
+              <div class="frontside">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <p><img class="img-fluid" src="/test.avif" alt="card image"></p>
+                    <h4 class="card-title">${contact.nom}</h4>
+                    <p class="card-text">${contact.telephone}</p>
+                    <p class="card-text">${contact.email}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+            // Insérer le nouveau contact au début de la liste
+            contactsContainer.insertBefore(contactCard, contactsContainer.firstChild);
+          }
+      
+          // Écouter l'événement de soumission du formulaire
+          addContactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher la soumission par défaut
+      
+            // Récupérer les valeurs du formulaire
+            const nom = document.getElementById('nom').value.trim();
+            const telephone = document.getElementById('tel').value.trim();
+            const email = document.getElementById('adresse').value.trim();
+      
+            // Créer un nouvel objet contact
+            const newContact = {
+              nom: nom,
+              telephone: telephone,
+              email: email
+            };
+      
+            // Ajouter le contact au début de la liste existante dans la page
+            addContactToList(newContact);
+      
+            // Réinitialiser le formulaire
+            addContactForm.reset();
+          });
+        });
+      </script>
+      
     <script src="/AddContact.js"></script>
     <!-- js -->
     <script>
